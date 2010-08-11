@@ -1,0 +1,8 @@
+#!/bin/bash
+
+LOCFILE=${2-"$HOME/.ssh/id_rsa.pub"}
+REMFILE=${3-"~/.ssh/authorized_keys"}
+
+
+cat $LOCFILE | ssh "$1" "cat >> $REMFILE"
+
