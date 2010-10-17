@@ -1,9 +1,9 @@
 #!/bin/bash
 
 CP=gcp
-which $CP
+which $CP &>/dev/null
 if [ $? -ne 0 ]; then
-	CP = cp
+	CP=cp
 fi
 
 cd $HOME
