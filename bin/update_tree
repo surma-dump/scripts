@@ -1,5 +1,11 @@
 #!/bin/bash
 
+CP=gcp
+which $CP
+if [ $? -ne 0 ]; then
+	CP = cp
+fi
+
 cd $HOME
 rm -rf tree/*
-gcp -rl builds/*/* tree/
+$CP -rl builds/*/* tree/
