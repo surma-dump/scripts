@@ -1,11 +1,14 @@
 #!/bin/bash
 
+if [ -z "$TREE_PATH" ] ; then
+	TREE_PATH=$HOME
+fi
 CP=gcp
 which $CP &>/dev/null
 if [ $? -ne 0 ]; then
 	CP=cp
 fi
 
-cd $HOME
+cd $TREE_PATH
 rm -rf tree/*
 $CP -rl builds/*/* tree/
