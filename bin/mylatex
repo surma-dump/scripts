@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ -z "$1" ] ; then
+	echo "Usage: $0 <Filename without extension>"
+	exit 1
+fi
+
+latex $1.tex &&
+dvips $1.dvi &&
+ps2pdf $1.ps
+rm -f *.dvi *.ps *.aux *.log &>/dev/null
