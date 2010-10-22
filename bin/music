@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ "$1" == "-d" ] ; then
+	rm ~/.scrobby/pid
+	pkill ncmpc
+	pkill mpd
+	pkill scrobby
+else
+	rm ~/.scrobby/pid
+	scrobby
+	mpd --no-daemon ~/.mpdconfig --stdout &>/dev/null & disown
+	ncmpc
+fi
