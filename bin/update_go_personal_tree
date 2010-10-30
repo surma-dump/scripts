@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJ=hashmap
+PROJ="hashmap planetwars crypto vt100"
 
 cd $GOROOT/src/pkg
 rm -rf 78762.de 2>/dev/null
@@ -12,4 +12,5 @@ for proj in $PROJ; do
 	cd $proj
 	make
 	make install
+	cd ..
 done
