@@ -1,0 +1,9 @@
+#!/bin/bash
+
+git init $@
+if [ -d .git ] ; then
+	# non-bare
+	export GIT_DIR=.git 
+	git commit -m "Empty commit" --allow-empty
+fi
+
