@@ -3,9 +3,9 @@
 PROJ="hashmap planetwars crypto vt100"
 
 cd $GOROOT/src/pkg
-rm -rf 78762.de 2>/dev/null
-mkdir -p 78762.de/go
-cd 78762.de/go
+rm -rf git.78762.de 2>/dev/null
+mkdir -p git.78762.de/go
+cd git.78762.de/go
 
 for proj in $PROJ; do
 	git clone git://git.78762.de/go/$proj
