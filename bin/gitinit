@@ -5,5 +5,11 @@ if [ -d .git ] ; then
 	# non-bare
 	export GIT_DIR=.git 
 	git commit -m "Empty commit" --allow-empty
+else
+	# bare
+	export GIT_DIR=.
+	touch git-daemon-export-ok
+	echo "Description (Ctrl+D to terminate):"
+	cat > description
 fi
 
