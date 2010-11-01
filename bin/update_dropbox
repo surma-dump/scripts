@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for file in $HOME/Dropbox/configs/* ; do
+	rm -vrf $HOME/.$(basename $file)
+	cp -rv $file $HOME/.$(basename $file)
+done
