@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd $(get_tree_path)/builds/scripts/bin
+git pull
+for file in update_*; do
+	./$file
+done

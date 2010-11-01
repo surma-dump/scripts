@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ -z "$TREE_PATH" ] ; then
+	TREE_PATH=$HOME
+fi
+
+echo $TREE_PATH
