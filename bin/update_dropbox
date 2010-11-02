@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -d $HOME/Dropbox/configs ] ; then
+	echo "No Dropbox active"
+	exit 1
+fi
 for file in $HOME/Dropbox/configs/* ; do
 	rm -vrf $HOME/.$(basename $file)
 	cp -rv $file $HOME/.$(basename $file)
