@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ -z "$1" ] ; then
+	echo "Usage: $0 <server> [pub key] [authorized key file]"
+	exit 1
+fi
 LOCFILE=${2-"$HOME/.ssh/id_rsa.pub"}
 REMFILE=${3-"~/.ssh/authorized_keys"}
 
