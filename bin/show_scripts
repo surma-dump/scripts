@@ -1,6 +1,4 @@
 #!/bin/bash
 
-if [ -z "$TREE_PATH" ] ; then
-	TREE_PATH=$HOME
-fi
-ls $TREE_PATH/builds/scripts/bin
+
+ls $(get_tree_path)/builds/scripts/bin
