@@ -11,6 +11,6 @@ for proj in $PROJ; do
 	git clone git://git.78762.de/go/$proj
 	cd $proj
 	make
-	make install
+	make test install
 	cd ..
 done
