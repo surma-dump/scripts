@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJ="hashmap planetwars crypto vt100 error pusher"
+PROJ="hashmap planetwars crypto vt100 error pusher genetics"
 
 cd $GOROOT/src/pkg
 rm -rf git.78762.de 2>/dev/null
