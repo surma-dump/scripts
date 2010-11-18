@@ -1,14 +1,21 @@
 #!/bin/bash
 
-PROJ="hashmap planetwars crypto vt100 error pusher genetics"
+if [ -z "$1" ] ; then
+	PROJ="hashmap planetwars crypto vt100 error pusher genetics"
+else
+	PROJ=$1
+fi
 
 cd $GOROOT/src/pkg
-rm -rf git.78762.de 2>/dev/null
 mkdir -p git.78762.de/go
 cd git.78762.de/go
 
 for proj in $PROJ; do
+	rm -rf $proj
 	git clone git://git.78762.de/go/$proj
+	if [ $? -ne 0 ] ; then
+		continue
+	fi
 	cd $proj
 	make
 	make test install
