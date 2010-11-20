@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ -z "$1" ] ; then
+	echo "Usage: $0 <git http address>"
+	exit 1
+fi
+
+DIR=$(dirname $1)
+PROJ=$(basename $1)
+cd $GOROOT/src/pkg
+mkdir -p $DIR
+cd $DIR
+
+rm -rf $PROJ
+git clone git://$DIR/$PROJ
+if [ $? -ne 0 ] ; then
+	echo "[!] Failed!"
+	exit 1
+fi
+cd $PROJ
+make
+make test
+make install
