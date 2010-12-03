@@ -1,0 +1,6 @@
+#!/bin/bash
+SERVER=${1-78762.de}
+PORT=${2-13370}
+
+echo "SOCKS-Proxy'ing to $SERVER:$PORT"
+ssh -ND $PORT $SERVER
